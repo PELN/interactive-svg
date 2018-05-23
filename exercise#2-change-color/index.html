@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pie SVG</title>
+
+    <style>
+            #pie {
+                width: 40vw;
+            }
+    </style>
+
+</head>
+<body>
+    
+    <div id="pie"></div>
+
+  
+
+
+    <script>
+    
+    let orgColor;
+    let id;
+
+    document.addEventListener("DOMContentLoaded", loadSvg);
+
+    async function loadSvg(){
+    // waiting for pie.svg to be fetched - thats why it's an async func
+        let svgData = await fetch("pie.svg");
+        let mySvg = await svgData.text();
+        console.log(mySvg);
+
+        document.querySelector("#pie").innerHTML = mySvg;  
+}
+
+    document.querySelector("#pie").addEventListener("mouseover", showElement);
+    
+    function showElement(){
+        // console.log(event.target.getAttribute("id"));
+        id = event.target.getAttribute("id");
+        orgColor = document.querySelector("#"+id).getAttribute("fill");
+        console.log(orgColor);
+       
+        event.target.getAttribute("fill");
+
+        
+
+        // document.querySelector("#one").setAttribute("fill", "#114477");
+        // document.querySelector("#two").setAttribute("fill", "#ff44dd");
+        // document.querySelector("#three").setAttribute("fill", "#99dd33");
+    }
+
+
+    document.querySelector("#pie").addEventListener("mouseout", hideElement);
+
+    function hideElement(event){
+        // console.log(event.target.getAttribute("id"));
+    
+        // id + orgColor
+        
+        // document.querySelector("#one").setAttribute("fill", orgColor);
+        // document.querySelector("#two").setAttribute("fill", orgColor);
+        // document.querySelector("#three").setAttribute("fill", orgColor);
+
+        // document.querySelector("#one").setAttribute("fill", "#ff9359");
+        // document.querySelector("#two").setAttribute("fill", "#00bdcb");
+        // document.querySelector("#three").setAttribute("fill", "#ebaaff");
+    }
+    
+    </script>
+
+
+
+
+</body>
+</html>
