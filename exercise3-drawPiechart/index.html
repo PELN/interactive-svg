@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>circle</title>
+<style>
+body {
+    background-color: rgb(199, 252, 188);
+
+}
+
+h1 {
+    margin-left: 5vw;
+    margin-top: 5vw;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+#text {
+    font-size: 5em;
+    position: absolute;
+    top: 4vw; 
+    left: 4vw;
+}
+
+#circle {
+    width: 50%;
+    margin:0 auto;
+}
+
+circle {
+    transition: all 2s ease;
+
+}
+
+svg{
+    background-color:rgb(135, 231, 231);
+    transform: rotate(-90deg);
+    border-radius: 50%;
+    /* transition: all 2s ease; */
+}
+
+#c1 {
+    fill: none;
+    stroke: rgb(236, 48, 164);
+    stroke-width: 100;
+    /* circumference of a circle: diameter(100) * pi = 314 */
+    stroke-dasharray: 100 314;
+    stroke-dashoffset: 100;
+}
+
+#c2 {
+    fill: none;
+    stroke: rgb(236, 233, 48);
+    stroke-width: 100;
+    /* circumference of a circle: diameter(100) * pi = 314 */
+    stroke-dasharray: 54 314;
+    stroke-dashoffset: 54;
+}
+
+#c3 {
+    fill: none;
+    stroke: rgb(76, 209, 147);
+    stroke-width: 100;
+    /* circumference of a circle: diameter(100) * pi = 314 */
+    stroke-dasharray: 160 314;
+    stroke-dashoffset: 160;
+}
+
+
+</style>
+</head>
+<body>
+
+    <h1>click the circle</h1>
+
+<div id="circle">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle id="c1" cx="50" cy="50" r="50"/>
+        <circle id="c2" cx="50" cy="50" r="50"/>
+        <circle id="c3" cx="50" cy="50" r="50"/>
+</svg>
+</div>
+
+<p id="text"></p>
+
+
+<script>
+
+let myJson;
+
+    document.addEventListener("DOMContentLoaded", getData);
+
+async function getData(){
+
+// load json
+    const jsonData = await fetch("text.json");
+    myJson = await jsonData.json();
+    console.log(myJson);
+
+    document.querySelector("svg").addEventListener("click", animate);
+    document.querySelector("svg").addEventListener("mouseover", showText);
+}
+
+function animate() {
+    document.querySelector("#c1").style.strokeDashoffset = 200;
+
+    document.querySelector("#c2").style.strokeDashoffset = 208;
+
+    document.querySelector("#c3").style.strokeDashoffset = 474;
+}
+
+function showText(){
+
+    let area = event.target;
+    console.log(area);
+
+    let id = area.id;
+
+    myJson.forEach(element => {
+    
+    if (element.id == id) {
+        console.log("value is", element.value);
+
+        //put it in html
+        document.querySelector("#text").textContent = element.value;
+
+        }
+    });
+
+}
+
+//hvis #id er == element.id 
+
+//føj det til HTML 
+
+
+</script>
+</body>
+</html>
