@@ -1,6 +1,6 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.52 400.88">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.48 400.88">
   <title>pie</title>
-  <path id="three" d="M393,318.21,337.85,510.66C231.56,480.18,170.1,369.31,200.58,263c24.93-86.94,102-145,192.45-145Z" transform="translate(-192.77 -118)" fill="#5aba47"/>
-  <path id="two" d="M393,318.21l181.45-84.61c46.73,100.21,3.37,219.33-96.84,266.06-45.5,21.22-91.54,24.84-139.8,11Z" transform="translate(-192.77 -118)" fill="#1f449c"/>
-  <path id="one" d="M393,318.21V118c80.39,0,147.48,42.74,181.45,115.6Z" transform="translate(-192.77 -118)" fill="#bf5827"/>
+  <path id="three" d="M200.23,200.21,145.08,392.66C38.79,362.18-22.67,251.31,7.81,145,32.74,58.06,109.81,0,200.26,0Z" transform="translate(0)" fill="#ebaaff"/>
+  <path id="two" d="M200.23,200.21,381.68,115.6c46.73,100.21,3.37,219.33-96.84,266.06-45.5,21.22-91.54,24.84-139.8,11Z" transform="translate(0)" fill="#00bdcb"/>
+  <path id="one" d="M200.23,200.21V0c80.39,0,147.48,42.74,181.45,115.6Z" transform="translate(0)" fill="#ff9359"/>
 </svg>
